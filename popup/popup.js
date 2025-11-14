@@ -24,7 +24,7 @@ const savedGrid = document.getElementById("savedGrid");
 
 // API endpoint (your backend)
 const API_ENDPOINT =
-  "https://cute-animal-destresser-extension.vercel.app/api/animals";
+  "https://cute-animal-destresser-extension.vercel.app/api/server";
 
 // Load saved images from Chrome storage
 chrome.storage.local.get("savedAnimals", (data) => {
