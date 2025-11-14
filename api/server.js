@@ -54,21 +54,35 @@
 import fetch from "node-fetch";
 
 export default async function handler(req, res) {
-  const { q = "cute+animals", per_page = 15, page = 1 } = req.query;
+  const { page = 1 } = req.query;
   const PEXELS_API_KEY = process.env.PEXELS_API_KEY;
 
   try {
     const response = await fetch(
-      `https://api.pexels.com/v1/search?query=${q}&per_page=${per_page}&page=${page}`,
+      `https://api.pexels.com/v1/search?query=cute+animals&per_page=15&page=${page}`,
       {
         headers: {
           Authorization: PEXELS_API_KEY,
         },
       }
     );
+
+    if (!response.ok) {
+      return res.status(500).json({ error: "Pexels API request failed" });
+    }
+
     const data = await response.json();
-    res.status(200).json(data);
+
+    // 🐶 IMPORTANT: Format the response for the popup
+    const formatted = data.photos.map((p) => ({
+      id: p.id,
+      url: p.src.original,     // popup expects "url"
+    }));
+
+    res.status(200).json(formatted);
   } catch (err) {
+    console.error("Backend error:", err);
     res.status(500).json({ error: "Failed to fetch from Pexels" });
   }
 }
+
