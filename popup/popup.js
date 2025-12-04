@@ -1,3 +1,5 @@
+// import { PEXELS_API_KEY_VALUE } from './config.js';
+
 // State
 let images = [];
 let saved = [];
@@ -22,9 +24,12 @@ const detailView = document.getElementById("detailView");
 const aboutView = document.getElementById("aboutView");
 const savedGrid = document.getElementById("savedGrid");
 
-// API endpoint (your backend)
-const API_ENDPOINT =
-  "https://cute-animal-destresser-extension.vercel.app/api/server";
+// API endpoint ( backend)
+// takes a second to load each time
+function getRandomApiEndpoint() {
+  const randomPage = Math.floor(Math.random() * 20) + 1; // pages 1–20
+  return `https://api.pexels.com/v1/search?query=cute+animals&per_page=30&page=${randomPage}`;
+}
 
 // Load saved images from Chrome storage
 chrome.storage.local.get("savedAnimals", (data) => {
@@ -96,10 +101,23 @@ function switchView(view) {
 
 async function fetchImages() {
   try {
-    const res = await fetch(API_ENDPOINT);
+    const API_ENDPOINT = getRandomApiEndpoint();
+    const res = await fetch(API_ENDPOINT, {
+      headers: {
+        Authorization: PEXELS_API_KEY
+      }
+    });
+
     if (!res.ok) throw new Error("Failed to fetch backend API");
 
-    images = await res.json();
+    const data = await res.json();
+
+    // Pexels returns images inside `photos`
+    images = data.photos.map(photo => ({
+      id: photo.id,
+      url: photo.src.large
+    }));
+
     currentIndex = 0;
     displayCurrentImage();
   } catch (err) {
@@ -108,6 +126,7 @@ async function fetchImages() {
     console.error(err);
   }
 }
+
 
 function displayCurrentImage() {
   if (images.length === 0) return;
