@@ -56,6 +56,7 @@ All photos are provided through the **Pexels API** and remain owned by their res
 
 ## 🐶 Roadmap (future ideas)
 
+- Add your pets! 
 - Dark mode
 - Pet-of-the-day widget
 - Custom animal filters (cats only, baby animals, etc.)
