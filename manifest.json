@@ -1,8 +1,8 @@
 {
   "manifest_version": 3,
-  "name": "Cute Animal Viewer",
+  "name": "Paws - Destress with Cute Animals",
   "version": "1.0",
-  "description": "A simple app that shows random cute animal photos from Pexels.",
+  "description": "A simple app that shows random cute animal photos from Pexels to destress.",
   "action": {
     "default_popup": "popup/index.html",
     "default_icon": {
@@ -12,16 +12,19 @@
     }
   },
   "permissions": [
-    "storage",
-    "activeTab",
-    "scripting",
-    "alarms"
+    "storage"
   ],
   "host_permissions": [
     "https://api.pexels.com/*"
   ],
   "content_security_policy": {
     "extension_pages": "script-src 'self'; object-src 'self';"
-}
-
+},
+  "web_accessible_resources": [{
+    "resources": [
+      "fontawesome-free-7.1.0-web/webfonts/*",
+      "icons/*"
+    ],
+    "matches": ["<all_urls>"]
+  }]
 }

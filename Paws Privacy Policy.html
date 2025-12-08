@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy - Paws: Destress with Cute Animals</title>
+    <link rel="icon" href="icons/icon128.png" type="image/png">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #e4e2dd;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+
+        .header {
+            background: #e4e2dd;
+            color: #333;
+            padding: 30px 20px;
+            text-align: center;
+            position: relative;
+            border-bottom: 1px solid #d0d0d0;
+        }
+
+        .header::before {
+            content: url("icons/icon.png");
+            font-size: 80px;
+            position: absolute;
+            opacity: 0.2;
+            top: 20px;
+            right: 20px;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 15px;
+        }
+
+        .logo-icon {
+            font-size: 32px;
+        }
+
+        .logo-text {
+            font-size: 24px;
+            font-weight: 600;
+            color: #333;
+        }
+
+        h1 {
+            font-size: 28px;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: #333;
+        }
+
+        .subtitle {
+            font-size: 14px;
+            color: #666;
+            margin-bottom: 15px;
+        }
+
+        .last-updated {
+            background: rgba(255, 255, 255, 0.3);
+            display: inline-block;
+            padding: 6px 12px;
+            border-radius: 8px;
+            font-size: 12px;
+            color: #666;
+        }
+
+        .content {
+            padding: 30px;
+        }
+
+        section {
+            margin-bottom: 30px;
+        }
+
+        h2 {
+            color: #222222;
+            font-size: 20px;
+            margin-bottom: 16px;
+            padding-bottom: 8px;
+            border-bottom: 1px solid #e4e2dd;
+            font-weight: 500;
+        }
+
+        p {
+            margin-bottom: 12px;
+            font-size: 14px;
+            color: #666;
+        }
+
+        ul {
+            list-style: none;
+            margin: 12px 0;
+            padding-left: 0;
+        }
+
+        li {
+            margin-bottom: 8px;
+            padding-left: 20px;
+            position: relative;
+            color: #666;
+            font-size: 14px;
+        }
+
+        li::before {
+            content: "•";
+            color: #f98B85;
+            font-size: 18px;
+            position: absolute;
+            left: 0;
+            top: -1px;
+        }
+
+        .highlight-box {
+            background: #f5f5f5;
+            border-left: 4px solid #f98B85;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 15px 0;
+        }
+
+        .highlight-box p {
+            margin: 0;
+            font-style: italic;
+            color: #555;
+        }
+
+        .data-flow {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 12px;
+            margin: 20px 0;
+            padding: 15px;
+            background: #f5f5f5;
+            border-radius: 8px;
+        }
+
+        .flow-step {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            width: 100%;
+        }
+
+        .step-number {
+            background: #f98B85;
+            color: white;
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 600;
+            font-size: 12px;
+            flex-shrink: 0;
+        }
+
+        .step-text {
+            flex: 1;
+            font-size: 13px;
+            color: #666;
+        }
+
+        .arrow {
+            color: #f98B85;
+            font-size: 16px;
+            text-align: center;
+            transform: rotate(90deg);
+        }
+
+        @media (min-width: 768px) {
+            .data-flow {
+                flex-direction: row;
+                justify-content: center;
+            }
+            
+            .arrow {
+                transform: rotate(0deg);
+            }
+        }
+
+        .contact {
+            background: #f5f5f5;
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        .contact h3 {
+            color: #333;
+            margin-bottom: 12px;
+            font-size: 16px;
+            font-weight: 500;
+        }
+
+        .email {
+            display: inline-block;
+            background: #e4e2dd;
+            color: #222222;
+            padding: 10px 20px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 14px;
+            transition: background 0.2s;
+            border: none;
+            cursor: pointer;
+        }
+
+        .email:hover {
+            background: #e1e1df;
+            opacity: 0.9;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 15px;
+            color: #999;
+            font-size: 12px;
+            border-top: 1px solid #e0e0e0;
+            margin-top: 30px;
+        }
+
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: #e4e2dd;
+            color: #333;
+            padding: 6px 12px;
+            border-radius: 8px;
+            font-size: 12px;
+            font-weight: 500;
+            margin: 8px 0;
+        }
+
+        .warning {
+            background: #fff3e0;
+            color: #ef6c00;
+        }
+
+        a {
+            color: #f98B85;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        code {
+            background: #e4e2dd;
+            padding: 2px 4px;
+            border-radius: 4px;
+            font-family: 'Courier New', monospace;
+            font-size: 12px;
+            color: #333;
+        }
+
+        .back-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            color: #666;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 14px;
+            margin-bottom: 15px;
+        }
+
+        .back-button:hover {
+            color: #f98B85;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .container {
+                border-radius: 8px;
+            }
+            
+            .header, .content {
+                padding: 20px;
+            }
+            
+            h1 {
+                font-size: 24px;
+            }
+            
+            h2 {
+                font-size: 18px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            body {
+                padding: 10px;
+            }
+            
+            .header {
+                padding: 20px 15px;
+            }
+            
+            .content {
+                padding: 20px 15px;
+            }
+            
+            h1 {
+                font-size: 20px;
+            }
+        }
+
+        /* Specific colors from your extension */
+        .accent-color {
+            color: #f98B85;
+        }
+        
+        .bg-accent {
+            background: #f98B85;
+        }
+        
+        .bg-light {
+            background: #f5f5f5;
+        }
+        
+        .bg-beige {
+            background: #e4e2dd;
+        }
+        
+        .text-dark {
+            color: #222222;
+        }
+        
+        .text-medium {
+            color: #333;
+        }
+        
+        .text-light {
+            color: #666;
+        }
+        
+        .text-lighter {
+            color: #999;
+        }
+
+        .icon-btn {
+            width: 24px;
+            height: 24px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 8px;
+        }
+    </style>
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="fontawesome-free-7.1.0-web/css/all.min.css">
+</head>
+<body>
+    <!-- <a href="https://website.com" class="back-button">
+        <i class="fas fa-arrow-left"></i> Back to Chrome Store Page
+    </a> -->
+    
+    <div class="container">
+        <div class="header">
+                     <!-- Logo Container -->
+      <div class="logo">
+        <img src="icons/logo.png" alt="Cute Animals Logo" class="header-logo">
+      </div>
+      
+            <h1>Privacy Policy</h1>
+            <div class="subtitle">Destress with Cute Animals Chrome Extension</div>
+            <div class="last-updated">
+                <i class="fas fa-calendar-alt"></i> Last Updated: <span id="currentMonth"></span>
+            </div>
+        </div>
+        
+        <div class="content">
+            <section class="intro">
+                <p>Welcome to Paws! We're committed to protecting your privacy and being transparent about how we handle your data. This privacy policy explains what information we collect, how we use it, and your rights regarding your personal data.</p>
+                
+                <div class="highlight-box">
+                    <p><i class="fas fa-heart accent-color"></i> <strong>TL;DR:</strong> Paws stores data locally on your device, doesn't collect personal information, and only connects to Pexels API when you provide your own API key.</p>
+                </div>
+            </section>
+            
+            <section class="data-collection">
+                <h2><i class="fas fa-database icon-btn"></i> What Data We Collect</h2>
+                <p>Paws collects minimal data, all stored locally on your device:</p>
+                <ul>
+                    <li><strong>Saved Images:</strong> URLs and metadata of animal pictures you save for later viewing</li>
+                    <li><strong>Hidden Images:</strong> IDs of images you choose to hide (so they don't appear again)</li>
+                    <li><strong>Pexels API Key:</strong> Only if you choose to provide one for accessing animal images</li>
+                    <li><strong>Extension Settings:</strong> Your preference settings stored locally</li>
+                </ul>
+                
+                <div class="badge">
+                    <i class="fas fa-lock"></i> All data is stored locally in Chrome's storage
+                </div>
+            </section>
+            
+            <section class="data-usage">
+                <h2><i class="fas fa-cogs icon-btn"></i> How We Use Your Data</h2>
+                <p>The data we collect is used exclusively to provide and improve your experience with Paws:</p>
+                <ul>
+                    <li>Display your saved animal pictures for quick access</li>
+                    <li>Remember which images you've hidden to personalize your feed</li>
+                    <li>Authenticate with Pexels API (only with your provided API key)</li>
+                    <li>Maintain your preferences across browser sessions</li>
+                </ul>
+                
+                <div class="data-flow">
+                    <div class="flow-step">
+                        <div class="step-number">1</div>
+                        <div class="step-text">You save an animal picture</div>
+                    </div>
+                    <div class="arrow">→</div>
+                    <div class="flow-step">
+                        <div class="step-number">2</div>
+                        <div class="step-text">URL stored locally on your device</div>
+                    </div>
+                    <div class="arrow">→</div>
+                    <div class="flow-step">
+                        <div class="step-number">3</div>
+                        <div class="step-text">Available in your saved gallery anytime</div>
+                    </div>
+                </div>
+            </section>
+            
+            <section class="third-party">
+                <h2><i class="fas fa-external-link-alt icon-btn"></i> Third-Party Services</h2>
+                <p>Paws uses the Pexels API to fetch animal images. When you provide your Pexels API key:</p>
+                <ul>
+                    <li>Your key is used <strong>only</strong> to authenticate with Pexels API</li>
+                    <li>API requests are made directly from your browser to Pexels servers</li>
+                    <li>We don't have access to your Pexels account or API key</li>
+                    <li>Pexels' privacy policy applies to their service</li>
+                </ul>
+                
+                <p><strong>Pexels Privacy Policy:</strong> <a href="https://www.pexels.com/privacy-policy/" target="_blank">https://www.pexels.com/privacy-policy/</a></p>
+                
+                <div class="badge warning">
+                    <i class="fas fa-exclamation-triangle"></i> Never share your API key with others
+                </div>
+            </section>
+            
+            <section class="no-personal-data">
+                <h2><i class="fas fa-user-shield icon-btn"></i> No Personal Data Collection</h2>
+                <p>We want to be perfectly clear about what we <strong>don't</strong> collect:</p>
+                <ul>
+                    <li><i class="fas fa-times accent-color"></i> <strong>No</strong> personal identification information</li>
+                    <li><i class="fas fa-times accent-color"></i> <strong>No</strong> email addresses or contact details</li>
+                    <li><i class="fas fa-times accent-color"></i> <strong>No</strong> browsing history outside the extension</li>
+                    <li><i class="fas fa-times accent-color"></i> <strong>No</strong> location data</li>
+                    <li><i class="fas fa-times accent-color"></i> <strong>No</strong> analytics or tracking</li>
+                    <li><i class="fas fa-times accent-color"></i> <strong>No</strong> data sharing with advertisers</li>
+                </ul>
+            </section>
+            
+            <section class="data-storage">
+                <h2><i class="fas fa-hdd icon-btn"></i> Data Storage & Security</h2>
+                <p>Your data is stored securely using Chrome's built-in storage APIs:</p>
+                <ul>
+                    <li><strong>Local Storage:</strong> Data persists on your device until you clear browser data</li>
+                    <li><strong>Sync Storage (Optional):</strong> If enabled, data syncs across your Chrome browsers</li>
+                    <li><strong>Encryption:</strong> Chrome handles encryption of stored data</li>
+                    <li><strong>Deletion:</strong> Clear all data by removing the extension or clearing browser data</li>
+                </ul>
+                
+                <p>To delete your data from Paws:</p>
+                <ol style="margin-left: 20px; margin-top: 8px; color: #666; font-size: 14px;">
+                    <li>Go to Chrome Extensions (chrome://extensions/)</li>
+                    <li>Find Paws and click "Remove"</li>
+                    <li>Or use Chrome Settings to clear extension data</li>
+                </ol>
+            </section>
+            
+            <section class="changes">
+                <h2><i class="fas fa-history icon-btn"></i> Policy Changes</h2>
+                <p>We may update this privacy policy from time to time. When we do, we'll update the "Last Updated" date at the top of this page. We encourage you to review this policy periodically.</p>
+                
+                <p>Significant changes will be communicated through:</p>
+                <ul>
+                    <li>Extension update notes in Chrome Web Store</li>
+                    <li>Updated version notification in the extension</li>
+                </ul>
+            </section>
+            
+            <div class="contact">
+                <h3><i class="fas fa-envelope icon-btn"></i> Contact </h3>
+                <p>If you have any questions about this Privacy Policy or data practices, please contact at:</p>
+                <a href="mailto:l.mariam.here@gmail.com" class="email">
+                    <i class="fas fa-envelope"></i> l.mariam.here@gmail.com
+                </a>
+           
+            </div>
+        </div>
+        
+        <div class="footer">
+            <p>© <span id="currentYear"></span> Paws: Destress with Cute Animals. All rights reserved.</p>
+            <p style="margin-top: 5px; font-size: 11px;">
+                This extension is not affiliated with Pexels. Pexels is a trademark of Pexels GmbH.
+            </p>
+        </div>
+    </div>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const now = new Date();
+            const currentYear = now.getFullYear();
+            const months = ['January', 'February', 'March', 'April', 'May', 'June', 
+                           'July', 'August', 'September', 'October', 'November', 'December'];
+            const currentMonth = months[now.getMonth()];
+            
+            const yearElement = document.getElementById('currentYear');
+            if (yearElement) {
+                yearElement.textContent = currentYear;
+            }
+            
+            const monthElement = document.getElementById('currentMonth');
+            if (monthElement) {
+                monthElement.textContent = currentMonth + ' ' + currentYear;
+            }
+            
+            // const backButton = document.querySelector('.back-button');
+            // if (backButton) {
+               
+            //     backButton.href = 'https://website.com';
+            // }
+            
+            const emailLinks = document.querySelectorAll('a[href^="mailto:"]');
+            emailLinks.forEach(link => {
+                link.href = 'mailto:l.mariam.here@gmail.com';
+                link.textContent = 'l.mariam.here@gmail.com';
+            });
+        });
+    </script>
+</body>
+</html>
