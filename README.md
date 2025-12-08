@@ -13,7 +13,9 @@ Paws is a Chrome extension that delivers a daily dose of adorable animal photos 
 - **Fullscreen Viewer** — zoom + pan for full detail
 - **Clean & Minimal UI** — calming experience focused on the animals
 
-
+![screenshot](images/screenshot-1.jpg)
+![screenshot](images/screenshot-2.jpg)
+![screenshot](images/screenshot-3.jpg)
 ---
 
 ## 🚀 Quick Start
